@@ -45,7 +45,7 @@ async def restart_handler(_, m):
 
 
 
-@bot.on_message(filters.command(["get_logs"]) & filters.user(YOUR_ADMIN_ID))
+@bot.on_message(filters.command(["get_logs"]) & filters.user(6005627579))
 async def send_logs(bot: Client, m: Message):
     try:
         await m.reply_document("downloaded_links.txt", caption="Here is the list of downloaded links 📜")
