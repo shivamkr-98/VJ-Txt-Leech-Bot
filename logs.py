@@ -13,5 +13,10 @@ logging.basicConfig(
 )
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+# Create a separate logger for downloaded links
+download_logger = logging.getLogger("downloads")
+download_handler = logging.FileHandler("downloaded_links.txt")
+download_handler.setLevel(logging.INFO)
+download_logger.addHandler(download_handler)
 
 logging = logging.getLogger()
