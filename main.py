@@ -45,6 +45,15 @@ async def restart_handler(_, m):
 
 
 
+@bot.on_message(filters.command(["get_logs"]) & filters.user(YOUR_ADMIN_ID))
+async def send_logs(bot: Client, m: Message):
+    try:
+        await m.reply_document("downloaded_links.txt", caption="Here is the list of downloaded links 📜")
+    except Exception as e:
+        await m.reply_text(f"Error: {str(e)}")
+
+
+
 @bot.on_message(filters.command(["upload"]))
 async def upload(bot: Client, m: Message):
     editable = await m.reply_text('𝕤ᴇɴᴅ ᴛxᴛ ғɪʟᴇ ⚡️')
