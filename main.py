@@ -24,7 +24,7 @@ from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 from pyrogram.types.messages_and_media import message
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from log import download_logger  # ✅ Import from log.py
+
 
 bot = Client(
     "bot",
@@ -147,7 +147,7 @@ async def upload(bot: Client, m: Message):
             V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","") # .replace("mpd","m3u8")
             url = "https://" + V
 
-            download_logger.info(url)
+           
 
             if "visionias" in url:
                 async with ClientSession() as session:
