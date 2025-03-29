@@ -205,7 +205,7 @@ async def upload(bot: Client, m: Message):
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
-                        copy = await bot.send_document(chat_id=m.chat.id, document=ka, caption=cc1)
+                        await helper.send_vid(bot, m, cc, filename, thumb, name, prog)
                         count += 1
                         os.remove(ka)
                         time.sleep(1)
